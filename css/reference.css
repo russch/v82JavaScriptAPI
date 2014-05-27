@@ -1,0 +1,199 @@
+﻿/*******************************************************************************
+ * General Styles
+ ******************************************************************************/
+
+body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+  body.smallScreen {
+    width: 1250px;
+    height: 900px;
+  }
+
+body, .ui-widget {
+  font-family: 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 0.875em;
+  line-height: 1.35;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-weight: 100;
+  line-height: 1.167;
+  color: #707070;
+}
+
+h2, h3, h4 {
+  font-weight: normal;
+  margin: 0;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  color: #DB7100;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+.ui-widget-content {
+  border-color: #bbb;
+}
+
+iframe {
+  overflow: hidden;
+}
+
+/*******************************************************************************
+ * Title Bar
+ ******************************************************************************/
+
+#titleBar {
+  border-width: 0 0 1px 0;
+  padding: 0 10px;
+}
+
+  #titleBar h1 {
+    padding: 0;
+    margin: 0;
+    line-height: 48px;
+  }
+
+  #titleBar h2 {
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+    font-size: 16px;
+  }
+/*******************************************************************************
+ * Side Bar
+ ******************************************************************************/
+
+#westPane {
+  border-width: 0;
+  padding: 0;
+}
+
+#h4 {
+  font-weight: strong;
+  margin: 0;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  color: #DB7100;
+}
+
+#tasksSideBar {
+  border-width: 0 1px 1px 0;
+  padding: 10;
+}
+
+  #tasksSideBar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+    #tasksSideBar ul li.activity {
+      display: normal;
+      height: 20px;
+      padding-left: 20px;
+      margin-bottom: 5px;
+      border: 1px solid transparent;
+      font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+      font-size: 1em;
+
+      cursor: pointer;
+    }
+
+      #tasksSideBar ul li.activity.ui-state-hover {
+        border-color: #999;
+        background-color: #dadada;
+      }
+
+      #tasksSideBar ul li.activity.ui-state-active {
+        border-color: #bbb;
+        background-color: #f6f6f6;
+      }
+	  
+#outputType label{
+  
+  display: normal;
+  height: 20px;
+  margin-bottom: 5px;
+  border: 1px solid transparent;
+  font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 1em;
+
+}
+	  
+
+/*******************************************************************************
+ * Main Pane
+ ******************************************************************************/
+
+#vizsSectionLayoutContainer {
+  border-width: 0 1px 0 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+#twitterVizContainer {
+  border-width: 1px 0 0 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/*******************************************************************************
+ * Footer
+ ******************************************************************************/
+
+#footer {
+  font-size: 11px;
+  line-height: 1.666em;
+  border-width: 1px 0 0 0;
+  color: #999;
+  text-align: center;
+  padding: 0 4px;
+}
+
+  #footer a, #footer a:visited {
+    text-decoration: none;
+    color: #999;
+  }
+
+    #footer a:hover {
+      text-decoration: underline;
+      color: #999;
+    }
+
+/*******************************************************************************
+ * Behavior-based CSS
+ ******************************************************************************/
+
+.fillMyContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.noTextSelection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+

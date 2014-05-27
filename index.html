@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<html>
+<head>
+  <title>Tableau v8 JavaScript API</title>
+  <link type="image/vnd.microsoft.icon" href="favicon.ico" rel="shortcut icon" />
+  <link type="text/css" rel="stylesheet" href="css/smoothness/jquery-ui-1.9.0.custom.min.css" />
+  <link type="text/css" rel="stylesheet" href="css/layout-default-latest.css" />
+  <link type="text/css" rel="stylesheet" href="css/reference.css" />
+  <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui-1.9.0.custom.min.js"></script>
+  <script type="text/javascript" src="js/jquery.layout-latest.min.js"></script>
+  <script type="text/javascript" src="http://tableau.russellchristopher.org/javascripts/api/tableau_v8.debug.js"></script>
+  <script type="text/javascript" src="js/data.js"></script>
+  <script type="text/javascript" src="js/mainScript.js"></script>
+  <script type="text/javascript" src="js/utilities.js"></script>
+
+</head>
+<body class="notsmallScreen">
+  <div id="layoutContainer" class="fillMyContainer">
+    <div id="titleBar" class="ui-layout-north">
+      <h1>Tableau v8 JavaScript API</h1>
+      <h2 id="h2">...Hover over each item to learn what it will do</h2>
+    </div>
+	<div id="westPane" class="ui-layout-west">
+      <div id="tasksSideBar" class="ui-layout-center"></div>
+      <div id="consoleContainer" class="ui-layout-center">
+		<hr><div id="outputType">Output to:
+			<div >
+				<input type="radio" class="tasksSideBar" name="alertOrConsole" value="Alert" checked>
+				<label for="alertorConsole">Alert</label><br>
+				<input type="radio" class="tasksSideBar" name="alertOrConsole" value="Console">
+				<label for="alertorConsole">Console</label>
+			</div>
+		</div>
+        
+      </div>
+    </div>
+    <div id="vizsSectionLayoutContainer" class="ui-layout-center">
+      <div id="mainVizContainer" class="ui-layout-center">
+        <div id="mainViz"></div>
+      </div>
+    </div>
+    <div id="footer" class="ui-layout-south"><a target="_blank" href='http://www.tableausoftware.com/contact'>
+      Contact</a> | 206.633.3400 | <a target="_blank" href='http://www.tableausoftware.com/tos'>
+        Terms of Use</a> | <a target="_blank" href='http://www.tableausoftware.com/privacy'>
+          Privacy</a> | <a target="_blank" href='http://www.tableausoftware.com/ip'>Patent &
+            Other IP</a> | © 2003-2012 Tableau Software. All Rights Reserved.</div>
+  </div>
+  <div id="marksDialog" title="Mark Information" style="display: none">
+    <p>0 marks selected</p>
+  </div>
+  <script type="text/javascript">
+    // Initialize the app on document ready.
+    $(initialize);
+  </script>
+</body>
+</html>

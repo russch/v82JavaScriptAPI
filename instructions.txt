@@ -1,0 +1,10 @@
+1. Unzip the contents of this folder to your webserver or desktop
+2. Publish the JavaScriptTarget.twbx workbook to your Tableau Server
+3. If necessary, replace "localhost" with the name/port of your Tableau server. Do so in:
+	
+	index.html:
+	   <script type="text/javascript" src="http://localhost/javascripts/api/tableau_v8.debug.js"></script>
+	mainScript.js"
+	   var serverName = "localhost", mainViz, mainWorkbook, newCustomView, dataSources; 
+	   
+	   
