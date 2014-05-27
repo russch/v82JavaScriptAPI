@@ -451,6 +451,31 @@ var sideBarData = [
     displayName: "Story Class",
     activities: [
       {
+        displayName: "changeSizeAsync()",
+        color: "#231F20",
+		describe: "Resizes the current Story"
+      },        
+      {
+        displayName: "activateStoryPointAsync()",
+        color: "#231F20",
+		describe: "Activates the StoryPoint at the specified index"
+      },   
+      {
+        displayName: "activateNextStoryPointAsync()",
+        color: "#231F20",
+		describe: "Activates the next StoryPoint if one exists. Ignored if currently active StoryPoint is also the last one"
+      },  
+      {
+        displayName: "activatePreviousStoryPointAsync()",
+        color: "#231F20",
+		describe: "Activates the previous StoryPoint if one exists. Ignored if currently active StoryPoint is also the first one"
+      },
+      {
+        displayName: "revertStoryPointAsync()",
+        color: "#231F20",
+		describe: "Reverts the StoryPoint at the secpifiued index"
+      },  
+        {
         displayName: "Story Property: Name",
         color: "#231F20",
 	   describe: "Use getName() to retreive the name of the story/sheet"
@@ -489,7 +514,17 @@ var sideBarData = [
         displayName: "Story Property: Workbook",
         color: "#231F20",
 		describe: "Gets the workbook to which this Story belongs"
-      },         
+      }, 
+      {
+        displayName: "Story Property: getStoryPointsInfo",
+        color: "#231F20",
+		describe: "Returns an array of StoryPointInfo object, which represent each story point in a single story"
+      },
+      {
+        displayName: "Story Property: getActiveStoryPoint()",
+        color: "#231F20",
+		describe: "Returns an index of the currently active StoryPoint (zero based) in the active Story"
+      }
     ]
   }, 
         
