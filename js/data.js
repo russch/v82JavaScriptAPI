@@ -451,7 +451,7 @@ var sideBarData = [
     displayName: "Story Class",
     activities: [
       {
-        displayName: "changeSizeAsync()",
+        displayName: "changeSizeAsync() - Story",
         color: "#231F20",
 		describe: "Resizes the current Story"
       },        
@@ -473,7 +473,7 @@ var sideBarData = [
       {
         displayName: "revertStoryPointAsync()",
         color: "#231F20",
-		describe: "Reverts the StoryPoint at the secpifiued index"
+		describe: "Reverts the StoryPoint at the specified index"
       },  
         {
         displayName: "Story Property: Name",

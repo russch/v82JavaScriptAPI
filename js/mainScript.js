@@ -1,4 +1,4 @@
-﻿//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
 // Russell Christopher v1.7 Feb-2013, CSS & Harness modified from Justin Rockwood's examples
 //////////////////////////////////////////////////////////////////////////////
 
@@ -276,6 +276,21 @@ function activityClick(activity) {
         case "Get Worksheets":
             getWorksheets();
             break;
+        case "changeSizeAsync() - Story":
+            changeStorySizeAsync();
+            break;        
+        case "activateStoryPointAsync()":
+            activateStoryPointAsync();
+            break; 
+        case "activateNextStoryPointAsync()":
+            activateNextStoryPointAsync();
+            break;            
+        case "activatePreviousStoryPointAsync()":
+            activatePreviousStoryPointAsync();
+            break;
+        case "revertStoryPointAsync()":
+            revertStoryPointAsync();
+            break;         
         case "Get Parameters":
             parameters_getParametersAsync();
             break;
@@ -368,7 +383,7 @@ function renderViz() {
 
     // Define variables for viz
     var mainVizDiv = $("#mainViz");
-    var mainWorkbookUrl = "http://" + serverName + "/t/SkunkWorks/views/JavaScriptTarget/Dashboard";
+    var mainWorkbookUrl = "https://" + serverName + "/t/SkunkWorks/views/JavaScriptTarget/Dashboard";
     var mainVizOptions = {
         hideTabs: false,
         hideToolbar: false,
@@ -387,7 +402,7 @@ function renderVizMoreOptions() {
 
     // Define variables for viz
     var mainVizDiv = $("#mainViz");
-    var mainWorkbookUrl = "http://" + serverName + "/t/SkunkWorks/views/JavaScriptTarget/Dashboard";
+    var mainWorkbookUrl = "https://" + serverName + "/t/SkunkWorks/views/JavaScriptTarget/Dashboard";
     var mainVizOptions = {
         hideTabs: false,
         hideToolbar: false,
@@ -1348,7 +1363,74 @@ function setActiveSheetDashboard() {
 
 }
 
+function changeStorySizeAsync() {
 
+    // This sample is using a worksheet of type Story because we only allow setting
+    // an EXACT size on worksheets of type Dashboard and Story. If we wanted a behavior of AUTOMATIC, 
+    // we could use any sheet in the workbook. 
+
+    mainWorkbook = mainViz.getWorkbook();
+
+    mainWorkbook.activateSheetAsync("Story").then(function (sheet) {
+        // Create sheetSize options
+        var sheetSize = {
+            behavior: tableauSoftware.SheetSizeBehavior.EXACTLY,
+            minSize: {
+                width: 250,
+                height: 150
+            },
+            maxSize: {
+                width: 250,
+                height: 150
+            }
+        };
+
+        // Resize sheet
+        sheet.changeSizeAsync(sheetSize);
+    });
+}
+
+function activateStoryPointAsync()
+{
+    mainWorkbook = mainViz.getWorkbook();
+
+    mainWorkbook.activateSheetAsync("Story").then(function (sheet) {
+        // Activate 2nd story point
+        sheet.activateStoryPointAsync(1);
+    });
+}
+
+function activateNextStoryPointAsync()
+{
+    mainWorkbook = mainViz.getWorkbook();
+
+    mainWorkbook.activateSheetAsync("Story").then(function (sheet) {
+        // Activate Next Point
+        sheet.activateNextStoryPointAsync();
+    });
+}
+
+function activatePreviousStoryPointAsync()
+{
+    mainWorkbook = mainViz.getWorkbook();
+
+    mainWorkbook.activateSheetAsync("Story").then(function (sheet) {
+        // Activate Previous story point
+        sheet.activatePreviousStoryPointAsync();
+    });
+}
+
+
+function revertStoryPointAsync()
+{
+ mainWorkbook = mainViz.getWorkbook();
+
+    mainWorkbook.activateSheetAsync("Story").then(function (sheet) {
+        // get the index of the active StoryPoint and use it to revert any changes to that storypoint
+        storyPoint = sheet.getActiveStoryPoint();
+        sheet.revertStoryPointAsync(sheet.getActiveStoryPoint().getIndex());
+    });    
+}
 function parameters_getParametersAsync() {
 
     mainWorkbook = mainViz.getWorkbook();
@@ -1960,3 +2042,4 @@ function filterHierarchicalAppliedFieldNames() {
 
 
 }
+
