@@ -290,7 +290,36 @@ function activityClick(activity) {
             break;
         case "revertStoryPointAsync()":
             revertStoryPointAsync();
+            break; 
+        case "Story Property: Name":
+            story_getName();
+            break;   
+         case "Story Property: Index":
+            story_getIndex();
+            break;
+          case "Story Property: isActive":
+            story_getIsActive();
             break;         
+          case "Story Property: isHidden":
+            story_getIsHidden();
+            break;    
+          case "Story Property: Story Type":
+            story_getType();
+            break;  
+          case "Story Property: Story Size":
+            getSize();
+            break;  
+          case "Story Property: Url":
+            getURL();
+            break;  
+          case "Story Property: Workbook":
+            story_getWorkbook();
+            break;             
+          case "Story Property: getStoryPointsInfo":
+            getURL();
+          case "Story Property: getActiveStoryPoint()":
+            getURL();
+            break;   
         case "Get Parameters":
             parameters_getParametersAsync();
             break;
@@ -1431,6 +1460,79 @@ function revertStoryPointAsync()
         sheet.revertStoryPointAsync(sheet.getActiveStoryPoint().getIndex());
     });    
 }
+
+function story_getName()
+{
+     mainWorkbook = mainViz.getWorkbook();
+
+    mainWorkbook.activateSheetAsync("Story").then(function (sheet) {
+        // Return Name of Story
+       alertOrConsole("The name of this story is '" + sheet.getName() + "'");
+    });    
+}
+
+function story_getIndex() {
+
+    mainWorkbook = mainViz.getWorkbook();
+
+    var onSuccess = function (sheet) {
+        alertOrConsole("The zero-based position of the 'Story' sheet in the workbook is " + sheet.getIndex());
+    };
+
+    var onError = function (err) {
+        alertOrConsole("Whoops");
+    };
+
+    mainWorkbook.activateSheetAsync("Story").then(onSuccess, onError);
+
+}
+
+function story_getIsActive() {
+
+    mainWorkbook = mainViz.getWorkbook();
+
+    var onSuccess = function (sheet) {
+        alertOrConsole("Is the Story 'Story' currently active?:  " + sheet.getIsActive());
+    };
+
+    var onError = function (err) {
+        alertOrConsole("Whoops");
+    };
+
+    mainWorkbook.activateSheetAsync("Story").then(onSuccess, onError);
+}
+
+function story_getIsHidden() {
+
+    mainWorkbook = mainViz.getWorkbook();
+    	
+	var onSuccess = function (sheet) {
+		var msg = "";
+		var sheet = mainWorkbook.getActiveSheet();
+        msg = msg + "Sheet '" + sheet.getName() + "': isHidden = " + sheet.getIsHidden();
+
+	    alertOrConsole(msg);		
+
+    };
+	
+	mainWorkbook.activateSheetAsync("Story").then(onSuccess, onError);
+		
+}
+
+
+function story_getType(){
+
+    mainWorkbook = mainViz.getWorkbook();
+    alertOrConsole(mainWorkbook.getActiveSheet().getName() + "'s type is " + mainWorkbook.getActiveSheet().getSheetType());
+}
+
+function  story_getWorkbook()
+{
+    mainWorkbook = mainViz.getWorkbook();
+    alertOrConsole(mainWorkbook.getActiveSheet().getName() + "'s parent workbook is " + mainWorkbook.getName());
+}
+
+
 function parameters_getParametersAsync() {
 
     mainWorkbook = mainViz.getWorkbook();

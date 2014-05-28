@@ -478,7 +478,7 @@ var sideBarData = [
         {
         displayName: "Story Property: Name",
         color: "#231F20",
-	   describe: "Use getName() to retreive the name of the story/sheet"
+	   describe: "Use getName() to retreive the name of the Story (sheet)"
       },
       {
         displayName: "Story Property: Index",
