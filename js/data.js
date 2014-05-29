@@ -521,13 +521,47 @@ var sideBarData = [
 		describe: "Returns an array of StoryPointInfo object, which represent each story point in a single story"
       },
       {
-        displayName: "Story Property: getActiveStoryPoint()",
+        displayName: "Story Property: getActiveStoryPoint",
         color: "#231F20",
 		describe: "Returns an index of the currently active StoryPoint (zero based) in the active Story"
       }
     ]
   }, 
-        
+{
+    displayName: "StoryPoint Class",
+    activities: [
+      {
+        displayName: "StoryPoint Property - getIndex",
+        color: "#231F20",
+		describe: "Returns zero-based position of this StoryPoint within the parent Story sheet"
+      },        
+      {
+        displayName: "StoryPoint Property - getCaption",
+        color: "#231F20",
+		describe: "Returns the text description for this StoryPoint"
+      },   
+      {
+        displayName: "StoryPoint Property - getIsActive",
+        color: "#231F20",
+		describe: "Indicates whether this is the currently active StoryPoint in the parent Story"
+      },  
+      {
+        displayName: "StoryPoint Property - getIsUpdated",
+        color: "#231F20",
+		describe: "Returns 'True' if the StoryPoint has been modified since it was 'captured' in design mode"
+      },
+      {
+        displayName: "StoryPoint Property - getContainedSheet",
+        color: "#231F20",
+		describe: "Returns the sheet (Dashboard, worksheet) contained by the StoryPoint. Null if the StoryPoint contains neither"
+      },  
+        {
+        displayName: "StoryPoint Property - getParentStory",
+        color: "#231F20",
+	   describe: "Returns the Story object which contains this StoryPoint"
+      }
+    ]
+  },        
         
   
  {

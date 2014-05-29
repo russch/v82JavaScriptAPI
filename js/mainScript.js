@@ -24,386 +24,393 @@ function activityClick(activity) {
     // Respond to clicks in sidebar
 
     switch (activity.displayName) {
-        case "Render Viz":
-            renderViz();
-            break;
-        case "Render Viz with more Options":
-            renderVizMoreOptions();
-            break;
-        case "Dispose viz":
-            dispose();
-            break;
-        case "Hide Viz":
-            hideViz();
-            break;
-        case "Show Viz":
-            showViz();
-            break;
-        case "Show Toolbar":
-            showToolbar();
-            break;
-        case "Hide Toolbar":
-            hideToolbar();
-            break;
-        case "Viz Property: AreToolbarsHidden":
-            areToolbarsHidden();
-            break;
-        case "Viz Property: AreTabsHidden":
-            areTabssHidden();
-            break;
-        case "Download Workbook":
-            showDownloadWorkbook();
-            break;
-        case "Export Crosstab":
-            showExportCrosstabDialog();
-            break;
-        case "Export Data":
-            exportData();
-            break;
-        case "Export Image":
-            exportImage();
-            break;
-        case "Export PDF":
-            exportPDF();
-            break;
-        case "Viz Property: IsHidden":
-            getIsVizHidden();
-            break;
-        case "Viz Property: AreAutomaticUpdatesPaused":
-            getAreAutomaticUpdatesPaused();
-            break;
-        case "Viz Property: ParentElement":
-            getParentElement();
-            break;
-        case "Viz Property: Url":
-            getURL();
-            break;
-        case "Viz Property: Workbook":
-            getWorkbook();
-            break;
-        case "Pause automatic updates":
-            pauseAutomaticUpdatesAsync();
-            break;
-        case "Refresh Data":
-            refreshData();
-            break;
-        case "Resume automatic updates":
-            resumeAutomaticUpdates();
-            break;
-        case "Revert All":
-            revertAll();
-            break;
-        case "Set frame size":
-            setFrameSize();
-            break;
-        case "Show share dialog":
-            showShareDialog();
-            break;
-        case "Toggle automatic updates":
-            toggleAutomaticUpdates();
-            break;
-        case "Activate event listeners":
-            activateEventListeners();
-            break;
-        case "Deactivate event listeners":
-            deactivateEventListeners();
-            break;
-        case "Change Parameter Value Async":
-            changeParameterValueAsync();
-            break;
-        case "Revert all async":
-            revertAllAsync();
-            break;
-        case "Save as custom view named 'test'":
-            rememberCustomViewAsync();
-            break;
-        case "Remove custom view 'test'":
-            removeCustomViewAsync();
-            break;
-        case "Show custom view 'test'":
-            showCustomViewAsync();
-            break;
-        case "Set active view as default":
-            setActiveCustomViewAsDefaultAsync();
-            break;
-        case "WB Property: ActiveCustomView":
-            getActiveCustomView();
-            break;
-        case "WB Property: ActiveSheet":
-            getActiveSheet();
-            break;
-        case "WB Property: Name":
-            getName();
-            break;
-        case "WB Property: Parameters":
-            getParametersAsync();
-            break;
-        case "WB Property: PublishedSheetsInfo":
-            getPublishedSheetsInfo();
-            break;
-        case "Create Custom View":
-            customView();
-            break;
-        case "Save Custom View":
-            saveAsync();
-            break;
-        case "Share Custom View":
-            setAdvertised();
-            break;
-        case "Rename Custom View":
-            setName();
-            break;
-        case "Show Custom View":
-            showAsync();
-            break;
-        case "Set Active Sheet - Range Example":
-            activateSheetRange();
-            break;
-        case "Set Active Sheet - Categorical Example":
-            activateSheetCategorical();
-            break;
-        case "Set Active Sheet - Date Period":
-            activateSheetDatePeriod();
-            break;
-        case "Set Active Sheet - Relative Date":
-            activateSheetRelative();
-            break;
-        case "Apply Hierarchical Filter":
-            applyHierarchicalFilterAsync();
-            break;
-        case "Apply Categorical Filter":
-            applyFilterAsync();
-            break;
-        case "Remove and Add a Categorical Filter":
-            applyFilterMoreAsync();
-            break;
-        case "Apply All to Categorical Filter":
-            applyAll();
-            break;
-        case "Apply Date Period Date Filter":
-            applyDatePeriodFilter();
-            break;
-        case "Apply Range Filter":
-            applyRangeFilterAsync();
-            break;
-        case "Apply Relative Date Filter":
-            applyRelativeDateFilterAsync();
-            break;
-        case "Clear Hierarchical Filter":
-            clearHierarchicalFilter();
-            break;
-        case "Clear Categorical":
-            clearCategorical();
-            break;
-        case "Clear Range Filter":
-            clearRangeFilter();
-            break;
-        case "Clear Relative Date Filter":
-            clearRelativeDateFilter();
-            break;
-        case "Select Marks Inside Dashboard":
-            selectMarksInsideDashboard();
-            break;
-        case "Select Marks":
-            selectMarksAsync();
-            break;
-        case "Select More Marks":
-            selectMoreMarksAsync();
-            break;
-        case "Select Marks using two dimensions":
-            selectMarksTwoDimensionsAsync();
-            break;
-        case "Clear Marks":
-            clearMarksAsync();
-            break;
-        case "Change Size":
-            changeSizeAsync();
-            break;
-        case "Sheet Property: DataSources":
-            getDataSourcesAsync();
-            break;
-        case "Sheet Property: Filters":
-            getFiltersAsync();
-            break;
-        case "Sheet Property: Index":
-            sheet_getIndex();
-            break;
-        case "Sheet Property: IsActive":
-            sheet_getIsActive();
-            break;
-        case "Sheet Property: IsHidden":
-            sheet_getIsHidden();
-            break;
-        case "Sheet Property: Name":
-            sheet_getName();
-            break;
-        case "Sheet Property: Objects":
-            sheet_getObjects();
-            break;
-        case "Sheet Property: ParentDashboard":
-            getParentDashboard();
-            break;
-        case "Sheet Property: Repository Url":
-            sheet_getRepositoryUrl();
-            break;
-        case "Sheet Property: Selected Marks":
-            getSelectedMarksAsync();
-            break;
-        case "Sheet Property: Sheet Type":
-            getSheetType();
-            break;
-        case "Sheet Property: Sheet Size":
-            getSize();
-            break;
-        case "Sheet Property: Workbook":
-            sheet_getWorkbook();
-            break;
-        case "Get Data Source":
-            getDataSources();
-            break;
-        case "Fetch Fields":
-            getFields();
-            break;
-        case "Data Source Property: IsPrimary":
-            getIsPrimary();
-            break;
-        case "Date Source Property: Name":
-            dataSourceGetName();
-            break;
-        case "Get Dashboard Objects":
-            getObjects();
-            break;
-        case "Get Worksheets":
-            getWorksheets();
-            break;
-        case "changeSizeAsync() - Story":
-            changeStorySizeAsync();
-            break;        
-        case "activateStoryPointAsync()":
-            activateStoryPointAsync();
-            break; 
-        case "activateNextStoryPointAsync()":
-            activateNextStoryPointAsync();
-            break;            
-        case "activatePreviousStoryPointAsync()":
-            activatePreviousStoryPointAsync();
-            break;
-        case "revertStoryPointAsync()":
-            revertStoryPointAsync();
-            break; 
-        case "Story Property: Name":
-            story_getName();
-            break;   
-         case "Story Property: Index":
-            story_getIndex();
-            break;
-          case "Story Property: isActive":
-            story_getIsActive();
-            break;         
-          case "Story Property: isHidden":
-            story_getIsHidden();
-            break;    
-          case "Story Property: Story Type":
-            story_getType();
-            break;  
-          case "Story Property: Story Size":
-            getSize();
-            break;  
-          case "Story Property: Url":
-            getURL();
-            break;  
-          case "Story Property: Workbook":
-            story_getWorkbook();
-            break;             
-          case "Story Property: getStoryPointsInfo":
-            getURL();
-          case "Story Property: getActiveStoryPoint()":
-            getURL();
-            break;   
-        case "Get Parameters":
-            parameters_getParametersAsync();
-            break;
-        case "Parameter Property: CurrentValue":
-            parameters_getCurrentValue();
-            break;
-        case "Parameter Property: DataType":
-            parameters_getDataType();
-            break;
-        case "Parameter Property: AllowableValuesType":
-            parameters_getAllowableValuesType();
-            break;
-        case "Parameter Property: AllowableValues":
-            parameters_getAllowableValues();
-            break;
-        case "Parameter Property: MinimumValue":
-            parameters_getMinMaxValue();
-            break;
-        case "Parameter Property: MaximumValue":
-            parameters_getMinMaxValue();
-            break;
-        case "Parameter Property: StepSize":
-            parameters_getStepSize();
-            break;
-        case "Parameter Property: DateStepPeriod":
-            parameters_getDateStepPeriod();
-            break;
-        case "Examine Parameter #1":
-            parametersDate();
-            break;
-        case "Examine Parameter #2":
-            parametersString();
-            break;
-        case "Examine Parameter #3":
-            parametersNumeric();
-            break;
-        case "Get Filters":
-            getFiltersAsyncAgain();
-            break;
-        case "Filter Property: Applied Values - #1":
-            filterCategoricalAppliedValues();
-            break;
-        case "Filter Property: Field - #1":
-            filterCategoricalField();
-            break;
-        case "Filter Property: FieldName - #1":
-            filterCategoricalFieldName();
-            break;
-        case "Filter Property: FilterType - #1":
-            filterCategoricalFilterType();
-            break;
-        case "Filter Property: IsExcludeMode - #1":
-            filterCategoricalIsExcludeMode();
-            break;
-        case "Filter Property: Worksheet - #1":
-            filterCategoricalWorksheet();
-            break;
-        case "Filter Property: DomainMinValue - #2":
-            filterQuantitativeDomainMinValue();
-            break;
-        case "Filter Property: DomainMaxValue - #2":
-            filterQuantitativeDomainMaxValue();
-            break;
-        case "Filter Property: MinValue - #2":
-            filterQuantitativeMinValue();
-            break;
-        case "Filter Property: MaxValue - #2":
-            filterQuantitativeMaxValue();
-            break;
-        case "Filter Property: IncludeNullValues - #2":
-            filterQuantitativeIncludeNullValues();
-            break;
-        case "Filter Property: Period - #3":
-            filterRelativeDatePeriod();
-            break;
-        case "Filter Property: Range - #3":
-            filterRelativeDateRange();
-            break;
-        case "Filter Property: RangeN - #3":
-            filterRelativeDateRangeN();
-            break;
-        case "Filter Property: AppliedFieldNames - #4":
-            filterHierarchicalAppliedFieldNames();
-            break;
+    case "Render Viz":
+        renderViz();
+        break;
+    case "Render Viz with more Options":
+        renderVizMoreOptions();
+        break;
+    case "Dispose viz":
+        dispose();
+        break;
+    case "Hide Viz":
+        hideViz();
+        break;
+    case "Show Viz":
+        showViz();
+        break;
+    case "Show Toolbar":
+        showToolbar();
+        break;
+    case "Hide Toolbar":
+        hideToolbar();
+        break;
+    case "Viz Property: AreToolbarsHidden":
+        areToolbarsHidden();
+        break;
+    case "Viz Property: AreTabsHidden":
+        areTabssHidden();
+        break;
+    case "Download Workbook":
+        showDownloadWorkbook();
+        break;
+    case "Export Crosstab":
+        showExportCrosstabDialog();
+        break;
+    case "Export Data":
+        exportData();
+        break;
+    case "Export Image":
+        exportImage();
+        break;
+    case "Export PDF":
+        exportPDF();
+        break;
+    case "Viz Property: IsHidden":
+        getIsVizHidden();
+        break;
+    case "Viz Property: AreAutomaticUpdatesPaused":
+        getAreAutomaticUpdatesPaused();
+        break;
+    case "Viz Property: ParentElement":
+        getParentElement();
+        break;
+    case "Viz Property: Url":
+        getURL();
+        break;
+    case "Viz Property: Workbook":
+        getWorkbook();
+        break;
+    case "Pause automatic updates":
+        pauseAutomaticUpdatesAsync();
+        break;
+    case "Refresh Data":
+        refreshData();
+        break;
+    case "Resume automatic updates":
+        resumeAutomaticUpdates();
+        break;
+    case "Revert All":
+        revertAll();
+        break;
+    case "Set frame size":
+        setFrameSize();
+        break;
+    case "Show share dialog":
+        showShareDialog();
+        break;
+    case "Toggle automatic updates":
+        toggleAutomaticUpdates();
+        break;
+    case "Activate event listeners":
+        activateEventListeners();
+        break;
+    case "Deactivate event listeners":
+        deactivateEventListeners();
+        break;
+    case "Change Parameter Value Async":
+        changeParameterValueAsync();
+        break;
+    case "Revert all async":
+        revertAllAsync();
+        break;
+    case "Save as custom view named 'test'":
+        rememberCustomViewAsync();
+        break;
+    case "Remove custom view 'test'":
+        removeCustomViewAsync();
+        break;
+    case "Show custom view 'test'":
+        showCustomViewAsync();
+        break;
+    case "Set active view as default":
+        setActiveCustomViewAsDefaultAsync();
+        break;
+    case "WB Property: ActiveCustomView":
+        getActiveCustomView();
+        break;
+    case "WB Property: ActiveSheet":
+        getActiveSheet();
+        break;
+    case "WB Property: Name":
+        getName();
+        break;
+    case "WB Property: Parameters":
+        getParametersAsync();
+        break;
+    case "WB Property: PublishedSheetsInfo":
+        getPublishedSheetsInfo();
+        break;
+    case "Create Custom View":
+        customView();
+        break;
+    case "Save Custom View":
+        saveAsync();
+        break;
+    case "Share Custom View":
+        setAdvertised();
+        break;
+    case "Rename Custom View":
+        setName();
+        break;
+    case "Show Custom View":
+        showAsync();
+        break;
+    case "Set Active Sheet - Range Example":
+        activateSheetRange();
+        break;
+    case "Set Active Sheet - Categorical Example":
+        activateSheetCategorical();
+        break;
+    case "Set Active Sheet - Date Period":
+        activateSheetDatePeriod();
+        break;
+    case "Set Active Sheet - Relative Date":
+        activateSheetRelative();
+        break;
+    case "Apply Hierarchical Filter":
+        applyHierarchicalFilterAsync();
+        break;
+    case "Apply Categorical Filter":
+        applyFilterAsync();
+        break;
+    case "Remove and Add a Categorical Filter":
+        applyFilterMoreAsync();
+        break;
+    case "Apply All to Categorical Filter":
+        applyAll();
+        break;
+    case "Apply Date Period Date Filter":
+        applyDatePeriodFilter();
+        break;
+    case "Apply Range Filter":
+        applyRangeFilterAsync();
+        break;
+    case "Apply Relative Date Filter":
+        applyRelativeDateFilterAsync();
+        break;
+    case "Clear Hierarchical Filter":
+        clearHierarchicalFilter();
+        break;
+    case "Clear Categorical":
+        clearCategorical();
+        break;
+    case "Clear Range Filter":
+        clearRangeFilter();
+        break;
+    case "Clear Relative Date Filter":
+        clearRelativeDateFilter();
+        break;
+    case "Select Marks Inside Dashboard":
+        selectMarksInsideDashboard();
+        break;
+    case "Select Marks":
+        selectMarksAsync();
+        break;
+    case "Select More Marks":
+        selectMoreMarksAsync();
+        break;
+    case "Select Marks using two dimensions":
+        selectMarksTwoDimensionsAsync();
+        break;
+    case "Clear Marks":
+        clearMarksAsync();
+        break;
+    case "Change Size":
+        changeSizeAsync();
+        break;
+    case "Sheet Property: DataSources":
+        getDataSourcesAsync();
+        break;
+    case "Sheet Property: Filters":
+        getFiltersAsync();
+        break;
+    case "Sheet Property: Index":
+        sheet_getIndex();
+        break;
+    case "Sheet Property: IsActive":
+        sheet_getIsActive();
+        break;
+    case "Sheet Property: IsHidden":
+        sheet_getIsHidden();
+        break;
+    case "Sheet Property: Name":
+        sheet_getName();
+        break;
+    case "Sheet Property: Objects":
+        sheet_getObjects();
+        break;
+    case "Sheet Property: ParentDashboard":
+        getParentDashboard();
+        break;
+    case "Sheet Property: Repository Url":
+        sheet_getRepositoryUrl();
+        break;
+    case "Sheet Property: Selected Marks":
+        getSelectedMarksAsync();
+        break;
+    case "Sheet Property: Sheet Type":
+        getSheetType();
+        break;
+    case "Sheet Property: Sheet Size":
+        getSize();
+        break;
+    case "Sheet Property: Workbook":
+        sheet_getWorkbook();
+        break;
+    case "Get Data Source":
+        getDataSources();
+        break;
+    case "Fetch Fields":
+        getFields();
+        break;
+    case "Data Source Property: IsPrimary":
+        getIsPrimary();
+        break;
+    case "Date Source Property: Name":
+        dataSourceGetName();
+        break;
+    case "Get Dashboard Objects":
+        getObjects();
+        break;
+    case "Get Worksheets":
+        getWorksheets();
+        break;
+    case "changeSizeAsync() - Story":
+        changeStorySizeAsync();
+        break;
+    case "activateStoryPointAsync()":
+        activateStoryPointAsync();
+        break;
+    case "activateNextStoryPointAsync()":
+        activateNextStoryPointAsync();
+        break;
+    case "activatePreviousStoryPointAsync()":
+        activatePreviousStoryPointAsync();
+        break;
+    case "revertStoryPointAsync()":
+        revertStoryPointAsync();
+        break;
+    case "Story Property: Name":
+        story_getName();
+        break;
+    case "Story Property: Index":
+        story_getIndex();
+        break;
+    case "Story Property: isActive":
+        story_getIsActive();
+        break;
+    case "Story Property: isHidden":
+        story_getIsHidden();
+        break;
+    case "Story Property: Story Type":
+        story_getType();
+        break;
+    case "Story Property: Story Size":
+        getSize();
+        break;
+    case "Story Property: Url":
+        getURL();
+        break;
+    case "Story Property: Workbook":
+        story_getWorkbook();
+        break;
+    case "Story Property: getStoryPointsInfo":
+        getStoryPointsInfo();
+        break;
+    case "Story Property: getActiveStoryPoint":
+        getActiveStoryPoint();
+        break;
+    case "StoryPoint Property - getIndex":
+        storyPoint_getIndexAndCaption();
+        break;
+    case "StoryPoint Property - getCaption":
+        storyPoint_getIndexAndCaption();
+        break;             
+    case "Get Parameters":
+        parameters_getParametersAsync();
+        break;
+    case "Parameter Property: CurrentValue":
+        parameters_getCurrentValue();
+        break;
+    case "Parameter Property: DataType":
+        parameters_getDataType();
+        break;
+    case "Parameter Property: AllowableValuesType":
+        parameters_getAllowableValuesType();
+        break;
+    case "Parameter Property: AllowableValues":
+        parameters_getAllowableValues();
+        break;
+    case "Parameter Property: MinimumValue":
+        parameters_getMinMaxValue();
+        break;
+    case "Parameter Property: MaximumValue":
+        parameters_getMinMaxValue();
+        break;
+    case "Parameter Property: StepSize":
+        parameters_getStepSize();
+        break;
+    case "Parameter Property: DateStepPeriod":
+        parameters_getDateStepPeriod();
+        break;
+    case "Examine Parameter #1":
+        parametersDate();
+        break;
+    case "Examine Parameter #2":
+        parametersString();
+        break;
+    case "Examine Parameter #3":
+        parametersNumeric();
+        break;
+    case "Get Filters":
+        getFiltersAsyncAgain();
+        break;
+    case "Filter Property: Applied Values - #1":
+        filterCategoricalAppliedValues();
+        break;
+    case "Filter Property: Field - #1":
+        filterCategoricalField();
+        break;
+    case "Filter Property: FieldName - #1":
+        filterCategoricalFieldName();
+        break;
+    case "Filter Property: FilterType - #1":
+        filterCategoricalFilterType();
+        break;
+    case "Filter Property: IsExcludeMode - #1":
+        filterCategoricalIsExcludeMode();
+        break;
+    case "Filter Property: Worksheet - #1":
+        filterCategoricalWorksheet();
+        break;
+    case "Filter Property: DomainMinValue - #2":
+        filterQuantitativeDomainMinValue();
+        break;
+    case "Filter Property: DomainMaxValue - #2":
+        filterQuantitativeDomainMaxValue();
+        break;
+    case "Filter Property: MinValue - #2":
+        filterQuantitativeMinValue();
+        break;
+    case "Filter Property: MaxValue - #2":
+        filterQuantitativeMaxValue();
+        break;
+    case "Filter Property: IncludeNullValues - #2":
+        filterQuantitativeIncludeNullValues();
+        break;
+    case "Filter Property: Period - #3":
+        filterRelativeDatePeriod();
+        break;
+    case "Filter Property: Range - #3":
+        filterRelativeDateRange();
+        break;
+    case "Filter Property: RangeN - #3":
+        filterRelativeDateRangeN();
+        break;
+    case "Filter Property: AppliedFieldNames - #4":
+        filterHierarchicalAppliedFieldNames();
+        break;
     }
 }
 
@@ -549,13 +556,13 @@ function showDownloadWorkbook() {
 
 
 function showExportCrosstabDialog() {
-	// Select a specific sheet to download as a crosstab
-	mainViz.showExportCrossTabDialog("Profit by Subcategory");
+    // Select a specific sheet to download as a crosstab
+    mainViz.showExportCrossTabDialog("Profit by Subcategory");
 }
 
 
 function exportData() {
-	// View the data of a specific sheet in a dashboard
+    // View the data of a specific sheet in a dashboard
     mainViz.showExportDataDialog("Sales by Date");
 }
 
@@ -764,7 +771,7 @@ function getActiveCustomView() {
 
 function getActiveSheet() {
     var foo = mainViz.getWorkbook().getActiveSheet().getName();
-    alertOrConsole("Sheet : " + foo); 
+    alertOrConsole("Sheet : " + foo);
 }
 
 function getName() {
@@ -822,8 +829,8 @@ function saveAsync() {
 
 function setAdvertised() {
 
-   // Allows other people to see this custom view   
-   newCustomView.setAdvertised(true);
+    // Allows other people to see this custom view   
+    newCustomView.setAdvertised(true);
     //Re-Save
     newCustomView.saveAsync();
 }
@@ -866,7 +873,7 @@ function applyFilterAsync() {
 
     var onSuccess = function (sheet) {
         // Replace any current filter on Category with "Technology"
-		sheet.applyFilterAsync("Category", "Technology", "REPLACE");
+        sheet.applyFilterAsync("Category", "Technology", "REPLACE");
     };
     var onError = function (err) {
         alertOrConsole(err);
@@ -881,17 +888,17 @@ function applyFilterMoreAsync() {
     var newSheet = mainWorkbook.getActiveSheet();
     var onSuccess = function () {
         // Remove 'Technology' selection from the quick filter
-        newSheet.applyFilterAsync("Category", "Technology", "REMOVE"); 
+        newSheet.applyFilterAsync("Category", "Technology", "REMOVE");
 
     };
     var onError = function (err) {
         alertOrConsole(err);
     };
-    
-	// ADD 'Furniture' and 'Office Supplies' selections to the quick filter, then 
-	// call onSuccess function (above) to remove 'Technology'. It would be smarter 
-	// just to use "REPLACE" below, but this is about showing options, not being smart.
-	
+
+    // ADD 'Furniture' and 'Office Supplies' selections to the quick filter, then 
+    // call onSuccess function (above) to remove 'Technology'. It would be smarter 
+    // just to use "REPLACE" below, but this is about showing options, not being smart.
+
     newSheet.applyFilterAsync("Category", ["Furniture", "Office Supplies"], "ADD").then(onSuccess, onError);
 }
 
@@ -901,7 +908,7 @@ function applyAll() {
     var newSheet = mainWorkbook.getActiveSheet();
     var onSuccess = function () {};
     // Select ALL members of this filter
-    newSheet.applyFilterAsync("Category", "", "ALL"); 
+    newSheet.applyFilterAsync("Category", "", "ALL");
 }
 
 function applyRangeFilterAsync() {
@@ -912,11 +919,11 @@ function applyRangeFilterAsync() {
         var beginDate = new Date("October 15, 2010");
         var endDate = new Date("December 1, 2011");
         // Specify range to be used by applyRangeFilterAsync
-		var filterOptions = {
+        var filterOptions = {
             min: beginDate,
             max: endDate
         };
-		// Apply filter
+        // Apply filter
         sheet.applyRangeFilterAsync("Order Date", filterOptions);
 
     };
@@ -924,8 +931,8 @@ function applyRangeFilterAsync() {
     var onError = function (err) {
         alertOrConsole("Whoops");
     };
-	
-	// Make sure we're on 'Sales by Date' sheet, then apply a filter to it
+
+    // Make sure we're on 'Sales by Date' sheet, then apply a filter to it
     var newSheet = mainWorkbook.activateSheetAsync('Sales by Date').then(onSuccess, onError);
 
 }
@@ -939,11 +946,11 @@ function applyRelativeDateFilterAsync() {
         // Change anchor date to Dec 1, and switch filter from "Last 4 years" to "lastRange376 days"
         sheet.applyRelativeDateFilterAsync(
             "Ship Date", {
-            anchorDate: new Date("12/1/2012"),
-            periodType: tableauSoftware.PeriodType.DAY,
-            rangeType: tableauSoftware.DateRangeType.LASTN,
-            rangeN: 376
-        });
+                anchorDate: new Date("12/1/2012"),
+                periodType: tableauSoftware.PeriodType.DAY,
+                rangeType: tableauSoftware.DateRangeType.LASTN,
+                rangeN: 376
+            });
     };
 
     var onError = function (err) {
@@ -1099,20 +1106,20 @@ function getDataSourcesAsync() {
 }
 
 function getFiltersAsync() {
-	
-	// Get first worksheet in book
+
+    // Get first worksheet in book
     var newSheet = mainWorkbook.getPublishedSheets()[0];
-    
-	var onSuccess = function (filters) {
+
+    var onSuccess = function (filters) {
         alertOrConsole("This worksheet has " + filters.length + " filter(s) associated with it.");
     };
-    
-	var onError = function (err) {
+
+    var onError = function (err) {
         alertOrConsole("Whoops");
     };
-    
-	// Switch to first worksheet in book, then get filters
-	newSheet.activateAsync().then(function () {
+
+    // Switch to first worksheet in book, then get filters
+    newSheet.activateAsync().then(function () {
         newSheet.getFiltersAsync().then(onSuccess, onError);
     });
 }
@@ -1151,22 +1158,22 @@ function sheet_getIsActive() {
 function sheet_getIsHidden() {
 
     mainWorkbook = mainViz.getWorkbook();
-    	
-	var onSuccess = function (sheet) {
-		var msg = "";
-		var sheet = mainWorkbook.getActiveSheet();
-		// Get sheets in dashboard
-		var dashboardWorksheets = sheet.getWorksheets();
-		// Walk sheets and see if any are hidden
-		for (i = 0; i < dashboardWorksheets.length; i++) {
-			msg = msg + "Sheet '" + dashboardWorksheets[i].getName() + "': isHidden = " + dashboardWorksheets[i].getIsHidden() + "\n\r";
-		}
-	    alertOrConsole(msg);		
+
+    var onSuccess = function (sheet) {
+        var msg = "";
+        var sheet = mainWorkbook.getActiveSheet();
+        // Get sheets in dashboard
+        var dashboardWorksheets = sheet.getWorksheets();
+        // Walk sheets and see if any are hidden
+        for (i = 0; i < dashboardWorksheets.length; i++) {
+            msg = msg + "Sheet '" + dashboardWorksheets[i].getName() + "': isHidden = " + dashboardWorksheets[i].getIsHidden() + "\n\r";
+        }
+        alertOrConsole(msg);
 
     };
-	
-	mainWorkbook.activateSheetAsync("Dashboard").then(onSuccess, onError);
-		
+
+    mainWorkbook.activateSheetAsync("Dashboard").then(onSuccess, onError);
+
 
 }
 
@@ -1215,10 +1222,10 @@ function onSuccess(result) {
     var alertOutput = "";
     if (selectedMarks.length === 0) alertOrConsole("selectedMarks: empty list");
     else {
-		// Each selected Mark
+        // Each selected Mark
         $.each(selectedMarks, function (i, mark) {
             alertOutput = alertOutput + "selectedMarks:\n";
-			// Each Mark has Pairs
+            // Each Mark has Pairs
             $.each(mark.getPairs(), function (j, pair) {
                 alertOutput = alertOutput + "  " + (pair.fieldName) + ": " + pair.value;
             });
@@ -1419,8 +1426,7 @@ function changeStorySizeAsync() {
     });
 }
 
-function activateStoryPointAsync()
-{
+function activateStoryPointAsync() {
     mainWorkbook = mainViz.getWorkbook();
 
     mainWorkbook.activateSheetAsync("Story").then(function (sheet) {
@@ -1429,8 +1435,7 @@ function activateStoryPointAsync()
     });
 }
 
-function activateNextStoryPointAsync()
-{
+function activateNextStoryPointAsync() {
     mainWorkbook = mainViz.getWorkbook();
 
     mainWorkbook.activateSheetAsync("Story").then(function (sheet) {
@@ -1439,8 +1444,7 @@ function activateNextStoryPointAsync()
     });
 }
 
-function activatePreviousStoryPointAsync()
-{
+function activatePreviousStoryPointAsync() {
     mainWorkbook = mainViz.getWorkbook();
 
     mainWorkbook.activateSheetAsync("Story").then(function (sheet) {
@@ -1450,25 +1454,23 @@ function activatePreviousStoryPointAsync()
 }
 
 
-function revertStoryPointAsync()
-{
- mainWorkbook = mainViz.getWorkbook();
+function revertStoryPointAsync() {
+    mainWorkbook = mainViz.getWorkbook();
 
     mainWorkbook.activateSheetAsync("Story").then(function (sheet) {
         // get the index of the active StoryPoint and use it to revert any changes to that storypoint
         storyPoint = sheet.getActiveStoryPoint();
         sheet.revertStoryPointAsync(sheet.getActiveStoryPoint().getIndex());
-    });    
+    });
 }
 
-function story_getName()
-{
-     mainWorkbook = mainViz.getWorkbook();
+function story_getName() {
+    mainWorkbook = mainViz.getWorkbook();
 
     mainWorkbook.activateSheetAsync("Story").then(function (sheet) {
         // Return Name of Story
-       alertOrConsole("The name of this story is '" + sheet.getName() + "'");
-    });    
+        alertOrConsole("The name of this story is '" + sheet.getName() + "'");
+    });
 }
 
 function story_getIndex() {
@@ -1505,32 +1507,71 @@ function story_getIsActive() {
 function story_getIsHidden() {
 
     mainWorkbook = mainViz.getWorkbook();
-    	
-	var onSuccess = function (sheet) {
-		var msg = "";
-		var sheet = mainWorkbook.getActiveSheet();
+
+    var onSuccess = function (sheet) {
+        var msg = "";
+        var sheet = mainWorkbook.getActiveSheet();
         msg = msg + "Sheet '" + sheet.getName() + "': isHidden = " + sheet.getIsHidden();
 
-	    alertOrConsole(msg);		
+        alertOrConsole(msg);
 
     };
-	
-	mainWorkbook.activateSheetAsync("Story").then(onSuccess, onError);
-		
+
+    mainWorkbook.activateSheetAsync("Story").then(onSuccess, onError);
+
 }
 
 
-function story_getType(){
+function story_getType() {
 
     mainWorkbook = mainViz.getWorkbook();
     alertOrConsole(mainWorkbook.getActiveSheet().getName() + "'s type is " + mainWorkbook.getActiveSheet().getSheetType());
 }
 
-function  story_getWorkbook()
-{
+
+function story_getWorkbook() {
     mainWorkbook = mainViz.getWorkbook();
     alertOrConsole(mainWorkbook.getActiveSheet().getName() + "'s parent workbook is " + mainWorkbook.getName());
 }
+
+
+function getStoryPointsInfo() {
+    mainWorkbook = mainViz.getWorkbook();
+    // Assign StoryPoints to an array, then check the length of the array
+    storypoints = mainWorkbook.getActiveSheet().getStoryPointsInfo();
+    alertOrConsole(storypoints.length + ' StoryPoints retreived from this Story.');
+
+}
+
+function getActiveStoryPoint() {
+    // Get the Active StoryPoint, then check its index.
+    alertOrConsole("StoryPoint " + mainWorkbook.getActiveSheet().getActiveStoryPoint().getIndex() + " (zero-based) is active in this Story.");
+}
+
+//"StoryPoint Property - getIndex"
+
+function storyPointClassHelper () {
+    
+    // This function just makes sure that a Story with an active StoryPoint is being viewed so that
+    // all the StoryPoint property calls actually have something to look at. 
+    
+    mainWorkbook = mainViz.getWorkbook();
+    
+    theStoryPoint = mainWorkbook.activateSheetAsync("Story").then(function (sheet) {
+        sheet.activateStoryPointAsync(0).then(function (storyPoint) {
+             foo = new tableausoftware.StoryPoint;
+             foo = storyPoint;
+             alert(storyPoint);
+        });
+    });
+    
+}
+
+function storyPoint_getIndexAndCaption()
+{
+    alertOrConsole("StoryPoint '" + mainWorkbook.getActiveSheet().getActiveStoryPoint().getCaption() + "' is currently active in this Story, and is at index "  + mainWorkbook.getActiveSheet().getActiveStoryPoint().getIndex());
+}
+
 
 
 function parameters_getParametersAsync() {
@@ -2144,4 +2185,3 @@ function filterHierarchicalAppliedFieldNames() {
 
 
 }
-
