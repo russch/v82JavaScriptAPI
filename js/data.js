@@ -449,12 +449,7 @@ var sideBarData = [
   }, 
 {
     displayName: "Story Class",
-    activities: [
-      {
-        displayName: "changeSizeAsync() - Story",
-        color: "#231F20",
-		describe: "Resizes the current Story"
-      },        
+    activities: [       
       {
         displayName: "activateStoryPointAsync()",
         color: "#231F20",
@@ -474,7 +469,12 @@ var sideBarData = [
         displayName: "revertStoryPointAsync()",
         color: "#231F20",
 		describe: "Reverts the StoryPoint at the specified index"
-      },  
+      },
+      {
+        displayName: "changeSizeAsync() - Story",
+        color: "#231F20",
+		describe: "Resizes the current Story"
+      }, 
         {
         displayName: "Story Property: Name",
         color: "#231F20",
@@ -516,12 +516,12 @@ var sideBarData = [
 		describe: "Gets the workbook to which this Story belongs"
       }, 
       {
-        displayName: "Story Property: getStoryPointsInfo",
+        displayName: "Story Property: StoryPointsInfo",
         color: "#231F20",
-		describe: "Returns an array of StoryPointInfo object, which represent each story point in a single story"
+		describe: "Returns an array of StoryPointInfo objects, which represent each story point in a single story"
       },
       {
-        displayName: "Story Property: getActiveStoryPoint",
+        displayName: "Story Property: ActiveStoryPoint",
         color: "#231F20",
 		describe: "Returns an index of the currently active StoryPoint (zero based) in the active Story"
       }
@@ -531,38 +531,67 @@ var sideBarData = [
     displayName: "StoryPoint Class",
     activities: [
       {
-        displayName: "StoryPoint Property - getIndex",
+        displayName: "StoryPoint Property - Index",
         color: "#231F20",
 		describe: "Returns zero-based position of this StoryPoint within the parent Story sheet"
       },        
       {
-        displayName: "StoryPoint Property - getCaption",
+        displayName: "StoryPoint Property - Caption",
         color: "#231F20",
 		describe: "Returns the text description for this StoryPoint"
       },   
       {
-        displayName: "StoryPoint Property - getIsActive",
+        displayName: "StoryPoint Property - IsActive",
         color: "#231F20",
 		describe: "Indicates whether this is the currently active StoryPoint in the parent Story"
       },  
       {
-        displayName: "StoryPoint Property - getIsUpdated",
+        displayName: "StoryPoint Property - IsUpdated",
         color: "#231F20",
-		describe: "Returns 'True' if the StoryPoint has been modified since it was 'captured' in design mode"
+		describe: "BUG - ALWAYS RETURNING TRUE IN BETA 5: Returns 'True' if the StoryPoint has been modified since it was 'captured' in design mode"
       },
       {
-        displayName: "StoryPoint Property - getContainedSheet",
+        displayName: "StoryPoint Property - ContainedSheet",
         color: "#231F20",
 		describe: "Returns the sheet (Dashboard, worksheet) contained by the StoryPoint. Null if the StoryPoint contains neither"
       },  
         {
-        displayName: "StoryPoint Property - getParentStory",
+        displayName: "StoryPoint Property - ParentStory",
         color: "#231F20",
 	   describe: "Returns the Story object which contains this StoryPoint"
       }
     ]
   },        
-        
+{
+    displayName: "StoryPointInfo Class",
+    activities: [
+      {
+        displayName: "StoryPointInfo Property - Index",
+        color: "#231F20",
+		describe: "Returns zero-based position of this StoryPoint within the parent Story sheet"
+      },        
+      {
+        displayName: "StoryPointInfo Property - Caption",
+        color: "#231F20",
+		describe: "Returns the text description for this StoryPoint"
+      },   
+      {
+        displayName: "StoryPointInfo Property - IsActive",
+        color: "#231F20",
+		describe: "Indicates whether this is the currently active StoryPoint in the parent Story"
+      },  
+      {
+        displayName: "StoryPointInfo Property - IsUpdated",
+        color: "#231F20",
+		describe: "BUG - ALWAYS RETURNING TRUE IN BETA 5: Returns 'True' if the StoryPoint has been modified since it was 'captured' in design mode"
+      }, 
+      {
+       displayName: "StoryPointInfo Property - ParentStory",
+       color: "#231F20",
+	   describe: "Returns the Story object which contains this StoryPoint"
+      }
+    ]
+  },        
   
  {
     displayName: "Parameter Class",

@@ -315,17 +315,44 @@ function activityClick(activity) {
     case "Story Property: Workbook":
         story_getWorkbook();
         break;
-    case "Story Property: getStoryPointsInfo":
+    case "Story Property: StoryPointsInfo":
         getStoryPointsInfo();
         break;
-    case "Story Property: getActiveStoryPoint":
+    case "Story Property: ActiveStoryPoint":
         getActiveStoryPoint();
         break;
-    case "StoryPoint Property - getIndex":
+    case "StoryPoint Property - Index":
         storyPoint_getIndexAndCaption();
         break;
-    case "StoryPoint Property - getCaption":
+    case "StoryPoint Property - Caption":
         storyPoint_getIndexAndCaption();
+        break; 
+    case "StoryPoint Property - IsActive":
+        storyPoint_getIsActive();
+        break;
+    case "StoryPoint Property - IsUpdated":
+        storyPoint_getIsUpdated();
+        break; 
+     case "StoryPoint Property - ContainedSheet":
+        storyPoint_getContainedSheet();
+        break;  
+     case "StoryPoint Property - ParentStory":
+        storyPoint_getParentStory();
+        break;
+    case "StoryPointInfo Property - Index":
+        storyPointInfo_getIndexAndCaption();
+        break;
+    case "StoryPointInfo Property - Caption":
+        storyPointInfo_getIndexAndCaption();
+        break; 
+    case "StoryPointInfo Property - IsActive":
+        storyPointInfo_getIsActive();
+        break;
+    case "StoryPointInfo Property - IsUpdated":
+        storyPointInfo_getIsUpdated();
+        break; 
+     case "StoryPointInfo Property - ParentStory":
+        storyPointInfo_getParentStory();
         break;             
     case "Get Parameters":
         parameters_getParametersAsync();
@@ -670,6 +697,7 @@ function activateEventListeners() {
     mainViz.addEventListener("customviewremove", onCustomViewRemoved);
     mainViz.addEventListener("customviewsetdefault", onCustomViewSetDefault);
     mainViz.addEventListener("tabswitch", onTabSwitch);
+    mainViz.addEventListener("STORYPOINTSWITCH", onStoryPointSwitch);
 }
 
 
@@ -705,6 +733,9 @@ function onTabSwitch() {
     alertOrConsole('onTabSwitch event');
 }
 
+function  onStoryPointSwitch(event) {
+    alertOrConsole("Moved from StoryPoint '" + event.getOldStoryPointInfo().getCaption()  + "' to '" + event.getOldStoryPoint().getCaption() + "'");
+}
 function deactivateEventListeners() {
 
 
@@ -716,7 +747,7 @@ function deactivateEventListeners() {
     mainViz.removeEventListener("customviewremove", onCustomViewRemoved);
     mainViz.removeEventListener("customviewsetdefault", onCustomViewSetDefault);
     mainViz.removeEventListener("tabswitch", onTabSwitch);
-
+    mainViz.removeEventListener("STORYPOINTSWITCH", onStoryPointSwitch);
     alert("Listeners deactivated");
 }
 
@@ -1548,31 +1579,99 @@ function getActiveStoryPoint() {
     alertOrConsole("StoryPoint " + mainWorkbook.getActiveSheet().getActiveStoryPoint().getIndex() + " (zero-based) is active in this Story.");
 }
 
-//"StoryPoint Property - getIndex"
 
-function storyPointClassHelper () {
+function storyPoint_getIndexAndCaption()
+{
+    // Make sure we're sitting on a Story, just in case:
     
-    // This function just makes sure that a Story with an active StoryPoint is being viewed so that
-    // all the StoryPoint property calls actually have something to look at. 
+    mainWorkbook.activateSheetAsync("Story").then(function (sheet) {
+        alertOrConsole("StoryPoint '" + mainWorkbook.getActiveSheet().getActiveStoryPoint().getCaption() + "' is currently active in this Story, and is at index "  + mainWorkbook.getActiveSheet().getActiveStoryPoint().getIndex());
+    });
+}
+
+function storyPoint_getIsActive()
+{
+    alertOrConsole("Is StoryPoint '" + mainWorkbook.getActiveSheet().getActiveStoryPoint().getCaption() + "' currently active in this Story?: " + mainWorkbook.getActiveSheet().getActiveStoryPoint().getIsActive());
+}
+
+function storyPoint_getIsUpdated()
+{
+    alertOrConsole("Has StoryPoint '" + mainWorkbook.getActiveSheet().getActiveStoryPoint().getCaption() + "' been updated since the StoryPoint was intially captured?: " + mainWorkbook.getActiveSheet().getActiveStoryPoint().getIsUpdated());
+}
+
+function storyPoint_getContainedSheet()
+{
+    alertOrConsole("The sheet contained by StoryPoint '" + mainWorkbook.getActiveSheet().getActiveStoryPoint().getCaption() + "' is '" + mainWorkbook.getActiveSheet().getActiveStoryPoint().getContainedSheet().getName() + "'");
+}
+
+function storyPoint_getParentStory()
+{
+    alertOrConsole("The Story which contains StoryPoint '" + mainWorkbook.getActiveSheet().getActiveStoryPoint().getCaption() + "' is named '" + mainWorkbook.getActiveSheet().getActiveStoryPoint().getParentStory().getName() + "'");
+}
+
+function storyPointInfo_getIndexAndCaption()
+{
+    // Make sure we're sitting on a Story, just in case:
     
-    mainWorkbook = mainViz.getWorkbook();
-    
-    theStoryPoint = mainWorkbook.activateSheetAsync("Story").then(function (sheet) {
-        sheet.activateStoryPointAsync(0).then(function (storyPoint) {
-             foo = new tableausoftware.StoryPoint;
-             foo = storyPoint;
-             alert(storyPoint);
+    mainWorkbook.activateSheetAsync("Story").then(function (sheet) {
+        // get the an array of StoryPointInfo objects
+        storyPoints = sheet.getStoryPointsInfo();
+        // String building
+        var msg="";
+        // Walk the array
+        $.each(storyPoints, function (i, value) {
+            msg = msg + "Storypoint '" + value.getCaption() + "' in Story '" + value.getParentStory().getName();
+            msg = msg + " is index " + value.getIndex() + ".\n\r";
         });
+        alertOrConsole(msg);
     });
     
 }
 
-function storyPoint_getIndexAndCaption()
+function storyPointInfo_getIsActive()
 {
-    alertOrConsole("StoryPoint '" + mainWorkbook.getActiveSheet().getActiveStoryPoint().getCaption() + "' is currently active in this Story, and is at index "  + mainWorkbook.getActiveSheet().getActiveStoryPoint().getIndex());
+    
+    storyPoints = mainWorkbook.getActiveSheet().getStoryPointsInfo();
+        // String building
+        var msg="";
+        // Walk the array
+        $.each(storyPoints, function (i, value) {
+            msg = msg + "Storypoint '" + value.getCaption() 
+            msg = msg + (value.getIsActive() === true ? "' IS ACTIVE \r\n" : "' is inactive \r\n")
+        });
+        alertOrConsole(msg);
+    
 }
 
+function storyPointInfo_getIsUpdated()
+{
+    
+    storyPoints = mainWorkbook.getActiveSheet().getStoryPointsInfo();
+        // String building
+        var msg="";
+        // Walk the array
+        $.each(storyPoints, function (i, value) {
+            msg = msg + "Storypoint '" + value.getCaption() 
+            msg = msg + (value.getIsUpdated() === true ? "' IS UPDATED \n\r" : "' has not been updated \n\r")
+        });
+        alertOrConsole(msg);
+    
+}
 
+function storyPointInfo_getParentStory()
+{
+    
+    storyPoints = mainWorkbook.getActiveSheet().getStoryPointsInfo();
+        // String building
+        var msg="";
+        // Walk the array
+        $.each(storyPoints, function (i, value) {
+            msg = msg + "The parent Story of StoryPoint '" + value.getCaption()
+            msg = msg + "' is '" + value.getParentStory().getName() + "'\n\r";
+        });
+        alertOrConsole(msg);
+    
+}
 
 function parameters_getParametersAsync() {
 
