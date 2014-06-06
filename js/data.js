@@ -548,7 +548,7 @@ var sideBarData = [
       {
         displayName: "StoryPoint Property - IsUpdated",
         color: "#231F20",
-		describe: "BUG - ALWAYS RETURNING TRUE IN BETA 5: Returns 'True' if the StoryPoint has been modified since it was 'captured' in design mode"
+		describe: "Returns 'False' if the StoryPoint has been modified but has not yet been reverted with the orange revert symbol. Otherwise, returns 'True'."
       },
       {
         displayName: "StoryPoint Property - ContainedSheet",
