@@ -5,7 +5,7 @@
 //////////////////////////////////////////////////////////////////////////////
 // Local Variables
 //////////////////////////////////////////////////////////////////////////////
-var serverName = "tableau.russellchristopher.org",
+var serverName = "localhost ",
     mainViz, mainWorkbook, newCustomView, dataSources;
 
 // REMEMBER to change the reference to tableau_v8.debug.js in index.html so that 
@@ -446,7 +446,7 @@ function renderViz() {
 
     // Define variables for viz
     var mainVizDiv = $("#mainViz");
-    var mainWorkbookUrl = "https://" + serverName + "/t/SkunkWorks/views/JavaScriptTarget/Dashboard";
+    var mainWorkbookUrl = "http://" + serverName + "/views/JavaScriptTarget/Dashboard";
     var mainVizOptions = {
         hideTabs: false,
         hideToolbar: false,
@@ -465,7 +465,7 @@ function renderVizMoreOptions() {
 
     // Define variables for viz
     var mainVizDiv = $("#mainViz");
-    var mainWorkbookUrl = "https://" + serverName + "/t/SkunkWorks/views/JavaScriptTarget/Dashboard";
+    var mainWorkbookUrl = "http://" + serverName + "/views/JavaScriptTarget/Dashboard";
     var mainVizOptions = {
         hideTabs: false,
         hideToolbar: false,

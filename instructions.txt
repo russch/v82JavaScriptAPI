@@ -3,8 +3,11 @@
 3. If necessary, replace "localhost" with the name/port of your Tableau server. Do so in:
 	
 	index.html:
-	   <script type="text/javascript" src="http://localhost/javascripts/api/tableau_v8.debug.js"></script>
-	mainScript.js"
-	   var serverName = "localhost", mainViz, mainWorkbook, newCustomView, dataSources; 
+        Line 14: <script type="text/javascript" src="http://localhost/javascripts/api/tableau_v8.debug.js"></script>
+	
+    mainScript.js:
+	   Line 8:    var serverName = "localhost", mainViz, mainWorkbook, newCustomView, dataSources; 
+       
+    If you use SSL, you will need to update "http" to "https" on line 14 of index.html and lines 449 & 468 of mainScript.js
 	   
 	   
