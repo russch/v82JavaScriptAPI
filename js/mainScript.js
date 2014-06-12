@@ -5,7 +5,7 @@
 //////////////////////////////////////////////////////////////////////////////
 // Local Variables
 //////////////////////////////////////////////////////////////////////////////
-var serverName = "localhost ",
+var serverName = "tableau.russellchristopher.org",
     mainViz, mainWorkbook, newCustomView, dataSources;
 
 // REMEMBER to change the reference to tableau_v8.debug.js in index.html so that 
@@ -446,7 +446,7 @@ function renderViz() {
 
     // Define variables for viz
     var mainVizDiv = $("#mainViz");
-    var mainWorkbookUrl = "http://" + serverName + "/views/JavaScriptTarget/Dashboard";
+    var mainWorkbookUrl = "https://" + serverName + "/t/SkunkWorks/views/JavaScriptTarget/Dashboard";
     var mainVizOptions = {
         hideTabs: false,
         hideToolbar: false,
@@ -465,7 +465,7 @@ function renderVizMoreOptions() {
 
     // Define variables for viz
     var mainVizDiv = $("#mainViz");
-    var mainWorkbookUrl = "http://" + serverName + "/views/JavaScriptTarget/Dashboard";
+    var mainWorkbookUrl = "https://" + serverName + "/t/SkunkWorks/views/JavaScriptTarget/Dashboard";
     var mainVizOptions = {
         hideTabs: false,
         hideToolbar: false,
@@ -734,7 +734,7 @@ function onTabSwitch() {
 }
 
 function  onStoryPointSwitch(event) {
-    alertOrConsole("Moved from StoryPoint '" + event.getOldStoryPointInfo().getCaption()  + "' to '" + event.getOldStoryPoint().getCaption() + "'");
+    alertOrConsole("Moved from StoryPoint '" + event.getOldStoryPointInfo().getCaption()  + "' to '" + event.getNewStoryPoint().getCaption() + "'");
 }
 function deactivateEventListeners() {
 
@@ -1596,7 +1596,7 @@ function storyPoint_getIsActive()
 
 function storyPoint_getIsUpdated()
 {
-    alertOrConsole("Has StoryPoint '" + mainWorkbook.getActiveSheet().getActiveStoryPoint().getCaption() + "' been updated since the StoryPoint was intially captured?: " + mainWorkbook.getActiveSheet().getActiveStoryPoint().getIsUpdated());
+    alertOrConsole("isUpdated Property for StoryPoint '" + mainWorkbook.getActiveSheet().getActiveStoryPoint().getCaption() + "' is: " + mainWorkbook.getActiveSheet().getActiveStoryPoint().getIsUpdated());
 }
 
 function storyPoint_getContainedSheet()
@@ -1652,7 +1652,7 @@ function storyPointInfo_getIsUpdated()
         // Walk the array
         $.each(storyPoints, function (i, value) {
             msg = msg + "Storypoint '" + value.getCaption() 
-            msg = msg + (value.getIsUpdated() === true ? "' IS UPDATED \n\r" : "' has not been updated \n\r")
+            msg = msg + (value.getIsUpdated() === true ? "' has not been updated. \n\r" : "' has been updated! \n\r")
         });
         alertOrConsole(msg);
     
